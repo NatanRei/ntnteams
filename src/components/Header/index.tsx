@@ -4,14 +4,14 @@ import { BackButton, BackIcon, Container, Logo } from './styles';
 import logoImg from '@assets/logo.png'
 
 type Props = {
-    showBlackButton?: boolean;
+    showBackButton?: boolean;
 }
 
-export function Header({ showBlackButton = false }: Props) {
+export function Header({ showBackButton = false }: Props) {
     return (
         <Container>
             {
-            showBlackButton && 
+            showBackButton && 
             <BackButton>
                 <BackIcon />
             </BackButton>
