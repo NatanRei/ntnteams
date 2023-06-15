@@ -17,8 +17,11 @@ import { Button } from '@components/Button';
 export function Players() {
 
     const [ team, setTeam ] = useState('Time A')
-    const [ players, setPlayers ] = useState(["Natan", "Reis"])
+    const [ players, setPlayers ] = useState(["Natan", "Reis", "teste"])
 
+    const handleRemovePlayers = (playerToRemove: string) => {
+        setPlayers(players.filter(player => player!== playerToRemove))
+    }
 
     return (
         <Container>
@@ -58,7 +61,7 @@ export function Players() {
                 renderItem={({ item }) => (
                     <PlayersCard 
                         name={item} 
-                        onRemove={() => {}}
+                        onRemove={() => handleRemovePlayers(item)}
                     />
                 )}    
                 ListEmptyComponent={() => (
