@@ -4,6 +4,7 @@ import { Highlight } from '@components/Highlight';
 import { GroupCard } from '@components/GroupCard';
 import { useState } from 'react';
 import { FlatList } from 'react-native';
+import { Button } from '@components/Button';
 
 export function Groups() {
   const [groups, setGroups] = useState<string[]>(['Galera da NTN', 'Galera de Teste'])
@@ -20,6 +21,10 @@ export function Groups() {
           title={item} 
         />
         )}
+      />
+
+      <Button 
+        title="Criar nova turma"
       />
       
     </Container>
