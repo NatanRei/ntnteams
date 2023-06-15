@@ -10,9 +10,6 @@ export default function App() {
 
   const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold })
 
-
-
-
   return (
     <ThemeProvider theme={theme}>
       <StatusBar 
@@ -21,8 +18,8 @@ export default function App() {
         translucent
       />
       { fontsLoaded ? 
-      // <Groups />  
-      <NewGroup />
+      <Groups />  
+      // <NewGroup />
       : <Loading />}
     </ThemeProvider>
   );
