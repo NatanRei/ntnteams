@@ -10,7 +10,7 @@ export const Container = styled.View`
 export const Message = styled.Text`
  ${({ theme }) => css`
     color: ${theme.colors.gray_200};
-    font-size: ${theme.font_size.md};
+    font-size: ${theme.font_size.md}px;
 
  `}   
 `;

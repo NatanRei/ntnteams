@@ -12,12 +12,20 @@ import { Filter } from "@components/Filter";
 import { PlayersCard } from '@components/PlayerCard';
 import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
+import { useRoute } from '@react-navigation/native';
 
+type RouteParams = {
+    group: string
+}
 
 export function Players() {
 
     const [ team, setTeam ] = useState('Time A')
     const [ players, setPlayers ] = useState(["Natan", "Reis", "teste"])
+
+    const route = useRoute();
+    const {  group } = route.params as RouteParams;
+
 
     const handleRemovePlayers = (playerToRemove: string) => {
         setPlayers(players.filter(player => player!== playerToRemove))
@@ -27,7 +35,7 @@ export function Players() {
         <Container>
             <Header showBackButton />
             <Highlight 
-                title="Nome da turma" 
+                title={group}
                 subtitle="adicione e separe os times" 
             />
             <Form>           
